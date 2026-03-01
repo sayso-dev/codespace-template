@@ -1,0 +1,13 @@
+{
+  "name": "Sayso",
+  "image": "mcr.microsoft.com/devcontainers/universal:5",
+  "postCreateCommand": "curl -fsSL https://sayso.me/install | sh",
+  "postStartCommand": "~/.local/bin/sayso --port 3000 --no-open &",
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Sayso",
+      "onAutoForward": "silent"
+    }
+  }
+}
