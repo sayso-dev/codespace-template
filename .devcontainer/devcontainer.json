@@ -2,7 +2,7 @@
   "name": "Sayso",
   "image": "mcr.microsoft.com/devcontainers/universal:5",
   "postCreateCommand": "curl -fsSL https://claude.ai/install.sh | bash && curl -fsSL https://sayso.me/install | sh",
-  "postStartCommand": "~/.local/bin/sayso --port 3000 --no-open &",
+  "postStartCommand": "nohup bash -c '~/.local/bin/sayso --port 3000 --no-open &' 2> /tmp/postStart.err.log 1> /tmp/postStart.out.log",
   "forwardPorts": [3000],
   "portsAttributes": {
     "3000": {
